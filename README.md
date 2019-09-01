@@ -1,1 +1,1 @@
-# sfg-petclinic-framework
+# sfg-petclinic
