@@ -18,7 +18,7 @@
     </parent>
     <groupId>renza.springframework</groupId>
     <artifactId>sfg-petclinic</artifactId>
-    <version>y</version>
+    <version>1.1-SNAPSHOT</version>
     <name>sfg-petclinic</name>
     <description>SFG Project PetClinic</description>
 
@@ -44,6 +44,6 @@
 
     <scm>
         <developerConnection>scm:git:https://github.com/AlexandreRenza/sfg-petclinic.git</developerConnection>
-      <tag>y</tag>
+      <tag>HEAD</tag>
   </scm>
 </project>
