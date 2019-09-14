@@ -2,12 +2,12 @@
 package renza.springframework.sfgpetclinic.services.map;
 
 import renza.springframework.sfgpetclinic.model.Vet;
-import renza.springframework.sfgpetclinic.services.CrudService;
+import renza.springframework.sfgpetclinic.services.VetService;
 
 import java.util.Set;
 
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService{
 
 
     @Override
