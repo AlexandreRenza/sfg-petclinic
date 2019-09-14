@@ -1,12 +1,13 @@
 
 package renza.springframework.sfgpetclinic.services.map;
 
+import org.springframework.stereotype.Service;
 import renza.springframework.sfgpetclinic.model.Vet;
 import renza.springframework.sfgpetclinic.services.VetService;
 
 import java.util.Set;
 
-
+@Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService{
 
 

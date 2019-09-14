@@ -2,11 +2,13 @@
 
 package renza.springframework.sfgpetclinic.services.map;
 
+import org.springframework.stereotype.Service;
 import renza.springframework.sfgpetclinic.model.Owner;
 import renza.springframework.sfgpetclinic.services.OwnerService;
 
 import java.util.Set;
 
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
