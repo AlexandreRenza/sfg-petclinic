@@ -1,5 +1,6 @@
 package renza.springframework.sfgpetclinic.services.map;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import renza.springframework.sfgpetclinic.model.Specialty;
 import renza.springframework.sfgpetclinic.services.SpecialtyService;
@@ -7,6 +8,7 @@ import renza.springframework.sfgpetclinic.services.SpecialtyService;
 import java.util.Set;
 
 @Service
+@Profile({"default","map"})
 public class SpecialtyMapService extends AbstractMapService<Specialty, Long> implements SpecialtyService {
 
     @Override
