@@ -3,10 +3,7 @@ package renza.springframework.sfgpetclinic.bootstrap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import renza.springframework.sfgpetclinic.model.*;
-import renza.springframework.sfgpetclinic.services.OwnerService;
-import renza.springframework.sfgpetclinic.services.PetTypeService;
-import renza.springframework.sfgpetclinic.services.SpecialtyService;
-import renza.springframework.sfgpetclinic.services.VetService;
+import renza.springframework.sfgpetclinic.services.*;
 
 import java.time.LocalDate;
 
@@ -17,14 +14,17 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialtyService specialtyService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService) {
+    public DataLoader(OwnerService ownerService, VetService vetService,
+                      PetTypeService petTypeService, SpecialtyService specialtyService,
+                      VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
-
 
     @Override
     public void run(String... args) throws Exception {
@@ -74,6 +74,14 @@ public class DataLoader implements CommandLineRunner {
 
         ownerService.save(owner1);
 
+        Visit visitDog = new Visit();
+        visitDog.setPet(mikesPet);
+        visitDog.setDescription("Visit of mike Pet ... a CAT");
+        visitDog.setDate(LocalDate.now());
+
+        visitService.save(visitDog);
+
+
         Owner owner2 = new Owner();
         owner2.setFirstName("Alexandre");
         owner2.setLastName("Rezende");
@@ -90,6 +98,14 @@ public class DataLoader implements CommandLineRunner {
         owner2.getPets().add(alexPet);
 
         ownerService.save(owner2);
+
+        Visit visitCat = new Visit();
+        visitCat.setPet(alexPet);
+        visitCat.setDescription("Visit of alex Pet ... a CAT");
+        visitCat.setDate(LocalDate.now());
+
+        visitService.save(visitCat);
+
 
         System.out.println("Loaded Owners ....");
 
