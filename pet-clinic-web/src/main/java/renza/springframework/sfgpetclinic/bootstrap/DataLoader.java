@@ -76,7 +76,7 @@ public class DataLoader implements CommandLineRunner {
 
         Visit visitDog = new Visit();
         visitDog.setPet(mikesPet);
-        visitDog.setDescription("Visit of mike Pet ... a CAT");
+        visitDog.setDescription("Visit of mike Pet ... a DOG");
         visitDog.setDate(LocalDate.now());
 
         visitService.save(visitDog);
